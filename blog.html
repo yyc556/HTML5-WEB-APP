@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://scontent.ftpe1-3.fna.fbcdn.net/v/t1.6435-9/118649334_3444095368967886_4567522878495888187_n.png?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HI-B5icnFQcAX9wJiss&_nc_ht=scontent.ftpe1-3.fna&oh=00_AT9IOgnBUr-90mcGiRLaN_VSxR09MP_BTZCq1qQZHCoblw&oe=61F30E62" type="">
+
+    <title>MUJI 無印良品 | 商品情報</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="https://www.muji.com/img/logo_muji_b.png" width="180">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            var url = "https://emma.pixnet.cc/mainpage/blog/categories/hot/22?page=1&per_page=10&api_version=2&format=json";
+        
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var myArr = JSON.parse(xmlhttp.responseText);
+                    myFunction(myArr);
+                }
+            }
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        
+            function myFunction(arr) {
+                var data = arr.articles;
+                var out = "";
+                var i;
+                
+            
+                for (i = 0; i < data.length; i++) {
+                    out += '<div class="col-lg-2">';
+                    out += '</div>';
+                    if ( data[i].thumb != "" ) 
+                        out += '<div class="col-lg-2">';
+                        out += '  <img src="' + data[i].thumb + '" />';
+                        out += '</div>';
+                    if ( data[i].title != "" ) 
+                        out += '<div class="col-lg-6">';
+                        out += '  <p><a href="' + data[i].link + '" target="_blank">' + data[i].title + '</a></p>';
+                    if ( data[i].address != undefined ) 
+                        out += '  <p><a href="https://www.google.com.tw/maps?daddr=' + data[i].address + '" target="_blank">' + data[i].address + '</a></p>';
+                        
+                        out += '</div>';
+                    out += '<div class="col-lg-2">';
+                    out += '  <br />';  
+                    out += '</div>';
+                }
+                document.getElementById("pixnet-stuff").innerHTML = out;
+            }
+            </script>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <body>
+        <section class="main-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>部落格專欄</h2>
+                        <font color="grey">為您搜集最新流行的部落格文章</font>
+                        <br />
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" id="pixnet-stuff">
+                </div>
+            </div>
+        </section>
+    </body>
+
+
+
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="first-item">
+                        <ul>
+                            <li><span style="color:white;">台灣無印良品客服專線：0800-50-51-51</span></li>
+                            <li><span style="color:white;">客服信箱：muji4you@mail.muji.tw</span></li>
+                            <li><span style="color:white;">客服服務時間：<br>週一～週五 9:00～12:00 13:00～18:00</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4>更多連結</h4>
+                    <ul>
+                        <li><a href="https://www.muji.com/tw/member/">會員服務</a></li>
+                        <li><a href="https://www.facebook.com/muji.tw">FB粉絲團</a></li>
+                        <li><a href="https://www.instagram.com/muji_taiwan/">Instagram</a></li>
+                        <li><a href="https://page.line.me/mujitaiwan?openQrModal=true">Line</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 MUJI All Rights Reserved. 
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>

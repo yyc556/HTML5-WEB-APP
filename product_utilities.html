@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://scontent.ftpe1-3.fna.fbcdn.net/v/t1.6435-9/118649334_3444095368967886_4567522878495888187_n.png?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=HI-B5icnFQcAX9wJiss&_nc_ht=scontent.ftpe1-3.fna&oh=00_AT9IOgnBUr-90mcGiRLaN_VSxR09MP_BTZCq1qQZHCoblw&oe=61F30E62" type="">
+
+    <title>MUJI 無印良品 | 商品情報</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="https://www.muji.com/img/logo_muji_b.png" width="180">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="product_clothes.html">衣料</a></li>
+                            <li><a href="product_utilities.html">生活雜貨</a></li>
+                            <li><a href="product_beauty.html">美容保養</a></li>
+                            <li><a href="product_food.html">食品</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <section class="main-banner">
+        <div class="container">
+
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {'packages': ['corechart']});
+                google.charts.setOnLoadCallback(init);
+                function init() {
+                    
+                    var url = "https://docs.google.com/spreadsheets/d/1YsavruieQprSYXNMD_YpkUGvbbvlF60a9JvEw00apMQ/gviz/tq?sheet=utilities";
+                    var query = new google.visualization.Query(url);
+                    query.setQuery('select *');
+                    query.send(processSheetsData);
+                }
+                function processSheetsData(response) {
+                    if (response.isError()) {
+                    alert(response.getMessage() + '' + response.getDetailedMessage());
+                    return false;
+                    }
+                    var data = response.getDataTable();
+                    var columns = data.getNumberOfColumns();
+                    var rows = data.getNumberOfRows();
+
+                    var str = "";
+                    var text = "";
+
+                    for (var r = 1; r < rows; r++) {
+                        text += '<div class="col-sm-3">';
+                        text += '  <div class="item">';
+                        text += '    <div class="thumb">';
+                        text += '      <div class="hover-content">';
+                        text += '        <div class="card" style="border-style:none">';
+                        text += '          <div class="card-image">';
+                        text += '            <a href="productInfo_utilities.html?id=' + r + '" target=_blank style="color:black"><img src="' + data.getFormattedValue(r, 2) +'" width="253"></a>';
+                        text += '            <span class="card-title"></span>';
+                        text += '          </div>';
+                        text += '          <div class="card-content">';
+                        text += '            <p><a href="productInfo_utilities.html?id=' + r + '" target=_blank style="color:black">' +
+                                                    data.getFormattedValue(r, 0) + '</a></p>';
+                        text += '          </div>';
+                        text += '          <div class="card-action">';
+                        text += '            <p>' + data.getFormattedValue(r, 1) + '</p>';
+                        text += '            <br />';
+                        text += '            <br />';
+                        text += '          </div>';
+                        text += '        </div>';
+                        text += '      </div>';
+                        text += '    </div>';
+                        text += '  </div>';
+                        text += '</div>';
+                    }
+                    document.getElementById("utilities").innerHTML = text;
+                }
+            </script>
+            <div class="row" id="utilities">
+            </div>
+
+        </div>
+    </section>
+
+     <!-- ***** Footer Start ***** -->
+     <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="first-item">
+                        <ul>
+                            <li><span style="color:white;">台灣無印良品客服專線：0800-50-51-51</span></li>
+                            <li><span style="color:white;">客服信箱：muji4you@mail.muji.tw</span></li>
+                            <li><span style="color:white;">客服服務時間：<br>週一～週五 9:00～12:00 13:00～18:00</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4>更多連結</h4>
+                    <ul>
+                        <li><a href="blog.html">部落格專欄</a></li>
+                        <li><a href="https://www.facebook.com/muji.tw">FB粉絲團</a></li>
+                        <li><a href="https://www.instagram.com/muji_taiwan/">Instagram</a></li>
+                        <li><a href="https://page.line.me/mujitaiwan?openQrModal=true">Line</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 MUJI All Rights Reserved. 
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>
